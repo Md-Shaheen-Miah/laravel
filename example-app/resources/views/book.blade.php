@@ -10,7 +10,7 @@
     <h1>Submit Your Details</h1>
 
     @if (session('success'))
-    <div>
+    <div >
         {{ session('success') }}
     </div>
 @endif
