@@ -29,7 +29,7 @@
                 <a class="nav-link" href="{{ url('/book') }}">Booking</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/guest') }}">View</a>
+                <a class="nav-link" href="{{ url('/view') }}">View</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/services') }}">Services</a>

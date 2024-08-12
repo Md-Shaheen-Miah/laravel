@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+
+    public function index()
+    {    
+        $books = Book::all(); 
+        return view('view', compact('books')); 
+    }
     public function book(){
 
         return view('book');
@@ -23,3 +29,5 @@ class BookController extends Controller
         return redirect()->back()->with('success','your post has been booked!');
     }
 }
+
+

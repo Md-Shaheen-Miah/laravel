@@ -9,10 +9,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/view', function () {
+//     return view('view');
+// });
+
 
 
 
 
 Route::get('/book', [BookController::class, 'book']);
 Route::post('/guest', [BookController::class, 'guest'])->name('guest');
-Route::get('/guest', [BookController::class, 'guest']);
+Route::get('/view', [BookController::class, 'index'])->name('view');
+

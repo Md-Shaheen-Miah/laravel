@@ -19,12 +19,21 @@
             border-bottom: 1px solid #ddd;
         }
         th {
-            background-color: #f2f2f2;
-            color: #333;
+            background-color: green;
+            color: #ffffff;
         }
         tr:hover {
-            background-color: #f5f5f5;
+            background-color: #c5b9cd;
+            color:red;
         }
+        h2 {
+            text-align:center;
+        }
+        .id{
+            background-color:#006996;
+            color:#ffffff;
+        }
+       
     </style>
 </head>
 <body>
@@ -34,16 +43,16 @@
     <table>
         <thead>
             <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Address</th>
+                <th >id</th>
+                <th >Name</th>
+                <th >Email</th>
+                <th >Address</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($data as $item)
+            @foreach($books as $item)
                 <tr>
-                    <td>{{ $item->id }}</td>
+                <th class="id" scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->address }}</td>
@@ -51,6 +60,7 @@
             @endforeach
         </tbody>
     </table>
+    <a class="nav-link" href="{{ url('/') }}">Home</a>
 
 </body>
 </html>
