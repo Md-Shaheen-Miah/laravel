@@ -26,12 +26,27 @@
             background-color: #c5b9cd;
             color:red;
         }
+        
         h2 {
             text-align:center;
         }
         .id{
             background-color:#006996;
             color:#ffffff;
+        }
+        tr .ed{
+            background-color:green;
+            color:#ffffff;
+            padding:8px;
+            text-decoration:none;
+            border-radius:5px;
+        }
+        tr .de{
+            background-color:red;
+            color:#ffffff;
+            padding:8px;
+            text-decoration:none;
+            border-radius:5px;
         }
        
     </style>
@@ -47,6 +62,7 @@
                 <th >Name</th>
                 <th >Email</th>
                 <th >Address</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -56,6 +72,10 @@
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->address }}</td>
+                    <td>
+                        <a class="ed" href="{{route('edit',$item->id)}}">Edit</a>
+                        <a class="de" href="">Delete</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

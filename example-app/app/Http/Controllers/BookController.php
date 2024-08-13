@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function update($item_id){
+       $item = Book::find($item_id);
+       return view('edit', compact('item'));
+
+    }
 
     public function index()
     {    
