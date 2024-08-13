@@ -4,12 +4,32 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Redirect;
 class BookController extends Controller
 {
+   public function destroy(Request $request){
+    $item = Book::find($request->item_id);
+    $item->delete();
+    return Redirect::to('/view');
+
+   }
+ 
+   
     public function update($item_id){
        $item = Book::find($item_id);
        return view('edit', compact('item'));
+
+    }
+
+    public function editStore(Request $request){
+        $book = Book::find($request->$item_id);
+        $book->name = $request->name;
+        $book->email = $request->email;
+        $book->address = $request->address;
+
+        $book->save();
+        return redirect::to('/view');
+
 
     }
 
@@ -31,7 +51,7 @@ class BookController extends Controller
 
         $book->save();
 
-        return redirect()->back()->with('success','your post has been booked!');
+        return redirect::to('/')->with('success','your post has been booked!');
     }
 }
 

@@ -32,22 +32,22 @@
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="{{ old('name') }}" required>
-        </div>
+        </div><br>
 
         <div>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="{{ old('email') }}" required>
-        </div>
+        </div><br>
 
         <div>
             <label for="phone">Address:</label>
             <input type="text" id="address" name="address" value="{{ old('address') }}" required>
-        </div>
+        </div><br>
 
        
         <div>
             <button type="submit">Submit</button>
-        </div>
+        </div><br>
         <a class="nav-link" href="{{ url('/') }}">Home</a>
     </form>
 </body>

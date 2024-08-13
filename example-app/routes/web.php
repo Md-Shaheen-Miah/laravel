@@ -17,6 +17,6 @@ Route::get('/', function () {
 Route::get('/book', [BookController::class, 'book']);
 Route::post('/guest', [BookController::class, 'guest'])->name('guest');
 Route::get('/view', [BookController::class, 'index'])->name('view');
-
 Route::get('edit/{item_id}', [BookController::class, 'update'])->name('edit');
+Route::delete('delete', [BookController::class, 'destroy'])->name('delete');
 

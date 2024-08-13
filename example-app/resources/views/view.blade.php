@@ -74,7 +74,15 @@
                     <td>{{ $item->address }}</td>
                     <td>
                         <a class="ed" href="{{route('edit',$item->id)}}">Edit</a>
-                        <a class="de" href="">Delete</a>
+                       
+                     <form action="{{route('delete')}}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <input type="text" name="item_id" value="{{$item->id}}" hidden>
+                        <button>delete</button>
+
+                     </form>
+                      
                     </td>
                 </tr>
             @endforeach
