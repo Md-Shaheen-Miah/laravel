@@ -11,9 +11,6 @@ Route::get('/', function () {
 
 
 
-
-
-
 Route::get('/book', [BookController::class, 'book']);
 Route::post('/guest', [BookController::class, 'guest'])->name('guest');
 Route::get('/view', [BookController::class, 'index'])->name('view');

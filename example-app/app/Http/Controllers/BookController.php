@@ -51,7 +51,7 @@ class BookController extends Controller
 
         $book->save();
 
-        return redirect::to('/')->with('success','your post has been booked!');
+        return redirect::to('/view')->with('success','your post has been booked!');
     }
 }
 
