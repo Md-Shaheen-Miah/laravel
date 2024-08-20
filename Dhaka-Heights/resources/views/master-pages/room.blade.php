@@ -33,7 +33,7 @@
                                 </div>
                                 <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ url('/room-details') }}">View Detail</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{{ url('/book') }}">Book Now</a>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                 </div>
                                 <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ url('/room-details') }}">View Detail</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{{ url('/book') }}">Book Now</a>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                 </div>
                                 <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ url('/room-details') }}">View Detail</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{{ url('/book') }}">Book Now</a>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                                 </div>
                                 <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ url('/room-details') }}">View Detail</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{{ url('/book') }}">Book Now</a>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@
                                 </div>
                                 <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ url('/room-details') }}">View Detail</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{{ url('/book') }}">Book Now</a>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@
                                 </div>
                                 <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{{ url('/room-details') }}">View Detail</a>
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="{{ url('/book') }}">Book Now</a>
                                 </div>
                             </div>

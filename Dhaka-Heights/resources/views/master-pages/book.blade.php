@@ -48,6 +48,7 @@
                                 <div class="col-md-3">
                                     <select class="form-select">
                                         <option selected>Child</option>
+                                        <option value="0">Adult 0</option>
                                         <option value="1">Child 1</option>
                                         <option value="2">Child 2</option>
                                         <option value="3">Child 3</option>
@@ -131,6 +132,7 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <select class="form-select" name="children" id="select2">
+                                              <option value="0">Adult 0</option>
                                               <option value="1">Child 1</option>
                                               <option value="2">Child 2</option>
                                               <option value="3">Child 3</option>

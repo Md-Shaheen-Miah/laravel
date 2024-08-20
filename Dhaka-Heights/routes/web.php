@@ -70,9 +70,9 @@ Route::get('/feedback', function () {
 Route::get('/book', function () {
     return view('master-pages.book');
 });
-/*Route::get('/loginn', function () {
-    return view('pages.loginn');
-});*/
+Route::get('/room-details', function () {
+    return view('master-pages.room-details');
+});
 
 
 Route::get('/booked-view', function () {
