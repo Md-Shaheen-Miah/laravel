@@ -60,7 +60,7 @@
                                 <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
                                 <a href="{{ url('/view-feedback') }}" class="nav-item nav-link">Feedback</a>
                             </div>
-                            <a href="{{ url('/dashboard') }}" class="nav-item nav-link active">Login</a>
+                            <a  href="{{ route('login') }}" class="nav-item nav-link active">Login</a>
                                 <a href="{{ url('/about') }}" class="nav-item nav-link">Registration</a>
                         </div>
                     </nav>
