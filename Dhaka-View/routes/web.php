@@ -71,7 +71,9 @@ Route::get('/book', function () {
 Route::get('/amenities', function () {
     return view('master-pages.amenities');
 });
-
+Route::get('/login', function () {
+    return view('master-pages.login');
+});
 
 
 
