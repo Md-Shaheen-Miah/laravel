@@ -3,7 +3,7 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookingController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -72,7 +72,7 @@ Route::get('/amenities', function () {
     return view('master-pages.amenities');
 });
 Route::get('/login', function () {
-    return view('master-pages.login');
+    return view('Auth.login');
 });
 
 
@@ -84,13 +84,10 @@ Route::get('/booked-view', function () {
 
 Route::get('/dashboard', function () {
     return view('admin-pages.dashboard');
-});
+})->name('dashboard');
 
 
 
-
-Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
-
-Route::get('/admin-pages.booked-view', [BookingController::class, 'show'])->name('booked-view');
-
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
 

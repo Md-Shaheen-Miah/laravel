@@ -6,12 +6,13 @@
 
 <link rel="stylesheet" href="master-css/login.css">
 <div class="contain">
-    <form action="">
+    <form method="GET" action="{{ route('dashboard') }}">
+    @csrf
             <div class="username">
-                <input type="text" placeholder="USERNAME"/>
+                <input type="email" placeholder="USERNAME" name="email" required/>
             </div>
             <div class="password">
-                <input type="text" placeholder="PASSWORD"/>
+                <input type="password" placeholder="PASSWORD" name="password"  required/>
             </div>
             <div class="login">
                 <span> <button class="log" type="submt">Log in</biutton></span>
