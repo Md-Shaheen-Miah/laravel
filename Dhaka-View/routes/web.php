@@ -4,6 +4,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BookController;
 
 
 /*
@@ -64,9 +65,11 @@ Route::get('/view-feedback', function () {
 Route::get('/feedback', function () {
     return view('master-pages.feedback');
 });
+
 Route::get('/book', function () {
     return view('master-pages.book');
 });
+
 
 Route::get('/amenities', function () {
     return view('master-pages.amenities');
@@ -78,9 +81,11 @@ Route::get('/login', function () {
 
 
 
-Route::get('/booked-view', function () {
-    return view('admin-pages.booked-view');
+Route::get('/booked', function () {
+    return view('admin-pages.booked');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('admin-pages.dashboard');
@@ -90,4 +95,12 @@ Route::get('/dashboard', function () {
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
+
+
+Route::post('/store', [BookController::class, 'store'])->name('store');
+Route::get('/booked', [BookController::class, 'booked']);
+Route::get('/bookededit/{book_id}', [BookController::class, 'update'])->name('bookededit');
+Route::post('editstore', [BookController::class, 'editstore'])->name('editstore');
+
+
 

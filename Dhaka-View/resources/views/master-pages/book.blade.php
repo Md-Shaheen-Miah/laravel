@@ -65,7 +65,7 @@
         </div>
         <!-- Booking End -->
 
-
+       
         <!-- Booking Start -->
         <div class="container-xxl py-5">
             <div class="container">
@@ -92,36 +92,37 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form >
+                            <form method="POST" action="{{route('store')}}">
+                                @csrf
                             
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" name="name"  id="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" name="name"  id="name" placeholder="Your Name" required>
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control"  id="email" name="email" placeholder="Your Email">
+                                            <input type="email" class="form-control"  id="email" name="email" placeholder="Your Email" required>
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating date" id="date3" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" name="checkin" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
+                                            <input type="text" class="form-control datetimepicker-input" name="checkin" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" required />
                                             <label for="checkin">Check In</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating date" id="date4" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" name="checkout" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+                                            <input type="text" class="form-control datetimepicker-input" name="checkout" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" required />
                                             <label for="checkout">Check Out</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <select class="form-select" name="adults" id="select1">
+                                            <select class="form-select" name="adult" id="select1" required>
                                               <option value="1">Adult 1</option>
                                               <option value="2">Adult 2</option>
                                               <option value="3">Adult 3</option>
@@ -131,7 +132,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <select class="form-select" name="children" id="select2">
+                                            <select class="form-select" name="children" id="select2" required>
                                               <option value="0">Child 0</option>
                                               <option value="1">Child 1</option>
                                               <option value="2">Child 2</option>
@@ -142,7 +143,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" name="room"  id="room" placeholder="Your Name">
+                                            <input type="number" class="form-control" name="room"  id="room" placeholder="Your Name" required>
                                             <label for="name">Room No.</label>
 
                                             
@@ -151,6 +152,12 @@
                                    
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                        
+                                            <script>
+                                            document.getElementById('submit-button').addEventListener('click', function() {
+                                                this.disabled = true;
+                                            });
+                                            </script>
                                     </div>
                                 </div>
                             </form>
@@ -159,6 +166,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Booking End -->
 
 

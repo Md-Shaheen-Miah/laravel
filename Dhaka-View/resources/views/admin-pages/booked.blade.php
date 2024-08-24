@@ -5,7 +5,7 @@
   <!--for demo wrap-->
   <h1>Fixed Table header</h1>
   <div class="tbl-header">
-  @if(isset($bookings) && $bookings->count() > 0)
+  
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
@@ -25,25 +25,29 @@
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-      @foreach( $bookings as $booking)
+      @foreach ( $books as $book)
         <tr>
-
-          <td>{{$booking->id}}</td>
-          <td>{{$booking->name}}</td>
-          <td>{{$booking->email}}</td>
-          <td>{{$booking->checkin}}</td>
-          <td>{{$booking->checkout}}</td>
-		      <td>{{$booking->adults}}</td>
-		      <td>{{$booking->children}}</td>
-		      <td>{{$booking->room}}</td>
-		      
+          
+          <td>{{$book->id}}</td>
+          <td>{{$book->name}}</td>
+          <td>{{$book->email}}</td>
+          <td>{{$book->checkin}}</td>
+          <td>{{$book->checkout}}</td>
+		      <td>{{$book->adults}}</td>
+		      <td>{{$book->children}}</td>
+		      <td>{{$book->room}}</td>
+		      <td>
+            <a href="{{route('bookededit',$book->id)}}">   <button>edit</button></a>
+         
+            <button>delete</button>
+          </td>
         </tr>
         @endforeach
 		  </tbody>
     </table>
-    @else
-    <p>কোন বুকিংস পাওয়া যায়নি।</p>
-@endif
+    
+    
+
   </div>
 </section>
 @endsection

@@ -96,12 +96,12 @@
                 <div class="collapse" id="maps">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="{{ url('/booked-view') }}">
+                      <a href="{{ url('/booked') }}">
                         <span class="sub-item">Guest List</span>
                       </a>
                     </li>
                     <li>
-                      <a href="maps/jsvectormap.html">
+                      <a href="#">
                         <span class="sub-item">Guest Profiles</span>
                       </a>
                     </li>
