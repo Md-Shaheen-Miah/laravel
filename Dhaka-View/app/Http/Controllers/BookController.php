@@ -6,6 +6,7 @@ use App\Models\book;
 use App\Http\Requests\StorebookRequest;
 use App\Http\Requests\UpdatebookRequest;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
@@ -40,7 +41,7 @@ class BookController extends Controller
         $book->children = $request->children;
         $book->room = $request->room;
         $book->save();
-        return redirect('/master-pages/home')->with('success','your post has been booked!');
+        return Redirect('/master-pages/home');
     }
 
     /**
@@ -54,9 +55,22 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function editstore()
+    public function editstore(StorebookRequest $request)
     {
-        //
+
+       
+
+
+        $book = book::find($request->book_id);
+        $book->name = $request->name;
+        $book->email = $request->email;
+        $book->checkin = Carbon::createFromFormat('m/d/Y h:i A', $request->checkin)->format('Y-m-d H:i:s');
+        $book->checkout = Carbon::createFromFormat('m/d/Y h:i A', $request->checkout)->format('Y-m-d H:i:s');
+        $book->adult = $request->adult;
+        $book->children = $request->children;
+        $book->room = $request->room;
+        $book->save();
+        return Redirect::to('/dashboard');
     }
 
     /**
@@ -71,8 +85,11 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(book $book)
+    public function destroy(Request $request)
     {
-        //
+        $book = book::find($request->book_id);
+        
+        $book->delete();
+        return Redirect::to('/admin-pages/dashboard'); 
     }
 }

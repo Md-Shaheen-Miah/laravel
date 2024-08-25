@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <h1>Edit Booking</h1>
-        <form action="{{ route('store') }}" method="POST">
+        <form action="{{ route('editstore') }}" method="POST">
             @csrf
             @method('PUT')
 

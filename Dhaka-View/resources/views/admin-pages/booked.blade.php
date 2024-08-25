@@ -39,7 +39,12 @@
 		      <td>
             <a href="{{route('bookededit',$book->id)}}">   <button>edit</button></a>
          
-            <button>delete</button>
+            <form action="{{route('delete')}}" method="POST">
+              @method('DELETE')
+              @csrf
+            <input type="text" name="book_id" id="" value="{{$book->id}}" hidden>
+             <BUtton>delete</BUtton>
+            </form>
           </td>
         </tr>
         @endforeach
