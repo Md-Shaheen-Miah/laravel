@@ -1,15 +1,9 @@
 @extends('admin')
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Booking</title>
-    <link rel="stylesheet" href="admin-css/book-edit.css">
-</head>
-<body>
+
+    <link rel="stylesheet" href="/admin-css/bookedit.css">
+
     <div class="container">
         <h1>Edit Booking</h1>
         <form action="{{ route('editstore') }}" method="POST">
@@ -54,9 +48,7 @@
             <button type="submit">Update Booking</button>
         </form>
     </div>
-</body>
-</html>
 
-        
+
 
 @endsection

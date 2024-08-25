@@ -99,7 +99,7 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::post('/store', [BookController::class, 'store'])->name('store');
 Route::get('/booked', [BookController::class, 'booked']);
-Route::get('/bookededit/{book_id}', [BookController::class, 'update'])->name('bookededit');
+Route::get('/bokedt/{book_id}', [BookController::class, 'update'])->name('bokedt');
 Route::put('editstore', [BookController::class, 'editstore'])->name('editstore');
 Route::delete('delete', [BookController::class, 'destroy'])->name('delete');
 

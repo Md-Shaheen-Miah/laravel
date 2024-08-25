@@ -41,7 +41,7 @@ class BookController extends Controller
         $book->children = $request->children;
         $book->room = $request->room;
         $book->save();
-        return Redirect('/master-pages/home');
+        return Redirect('/home');
     }
 
     /**
@@ -70,7 +70,7 @@ class BookController extends Controller
         $book->children = $request->children;
         $book->room = $request->room;
         $book->save();
-        return Redirect::to('/dashboard');
+        return Redirect('/booked');
     }
 
     /**
@@ -79,7 +79,7 @@ class BookController extends Controller
     public function update($book_id)
     {
         $book = book::find($book_id);
-        return view('admin-pages.bookededit', compact('book'));
+        return view('admin-pages.bokedt', compact('book'));
     }
 
     /**
@@ -90,6 +90,6 @@ class BookController extends Controller
         $book = book::find($request->book_id);
         
         $book->delete();
-        return Redirect::to('/admin-pages/dashboard'); 
+        return Redirect('/booked'); 
     }
 }

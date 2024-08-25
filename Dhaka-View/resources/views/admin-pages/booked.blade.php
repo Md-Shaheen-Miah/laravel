@@ -37,7 +37,7 @@
 		      <td>{{$book->children}}</td>
 		      <td>{{$book->room}}</td>
 		      <td>
-            <a href="{{route('bookededit',$book->id)}}">   <button>edit</button></a>
+            <a href="{{route('bokedt',$book->id)}}">   <button>edit</button></a>
          
             <form action="{{route('delete')}}" method="POST">
               @method('DELETE')
