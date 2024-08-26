@@ -146,14 +146,14 @@
                 <div class="collapse" id="submenu">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a data-bs-toggle="collapse" href="#subnav1">
+                      <a  href="{{ url('/viewstaff') }}">
                         <span class="sub-item">Staff List</span>
                         
                       </a>
                      
                     </li>
                     <li>
-                      <a data-bs-toggle="collapse" href="#subnav2">
+                      <a  href="{{ url('/staff') }}">
                         <span class="sub-item">Add New Staff</span>
                         
                       </a>

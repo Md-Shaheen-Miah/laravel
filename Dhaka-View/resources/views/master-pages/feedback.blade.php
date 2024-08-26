@@ -32,11 +32,12 @@
 <body>
     <div class="feedback-form">
         <h2>Hotel Feedback Form</h2>
-        <form action="/submit-feedback" method="POST">
+        <form action="#" method="POST">
+            @csrf
             <!-- Overall Satisfaction -->
             <div class="form-group">
                 <label for="overall-satisfaction">Overall Satisfaction:</label>
-                <select id="overall-satisfaction" name="overall_satisfaction">
+                <select id="overall-satisfaction" name="overall" required>
                     <option value="very_satisfied">Very Satisfied</option>
                     <option value="satisfied">Satisfied</option>
                     <option value="neutral">Neutral</option>
@@ -48,7 +49,7 @@
             <!-- First Impressions -->
             <div class="form-group">
                 <label for="first-impressions">First Impressions:</label>
-                <select id="first-impressions" name="first_impressions">
+                <select id="first-impressions" name="ipress" required>
                     <option value="excellent">Excellent</option>
                     <option value="good">Good</option>
                     <option value="average">Average</option>
@@ -60,7 +61,7 @@
             <!-- Ease of Reservation -->
             <div class="form-group">
                 <label for="ease-of-reservation">Ease of Reservation:</label>
-                <select id="ease-of-reservation" name="ease_of_reservation">
+                <select id="ease-of-reservation" name="reserve" required>
                     <option value="very_easy">Very Easy</option>
                     <option value="easy">Easy</option>
                     <option value="neutral">Neutral</option>
@@ -72,7 +73,7 @@
             <!-- Check-In/Check-Out Process -->
             <div class="form-group">
                 <label for="checkin-checkout">Check-In/Check-Out Process:</label>
-                <select id="checkin-checkout" name="checkin_checkout">
+                <select id="checkin-checkout" name="check" required>
                     <option value="very_efficient">Very Efficient</option>
                     <option value="efficient">Efficient</option>
                     <option value="neutral">Neutral</option>
@@ -84,7 +85,7 @@
             <!-- Staff Friendliness -->
             <div class="form-group">
                 <label for="staff-friendliness">Staff Friendliness:</label>
-                <select id="staff-friendliness" name="staff_friendliness">
+                <select id="staff-friendliness" name="staff" required>
                     <option value="excellent">Excellent</option>
                     <option value="good">Good</option>
                     <option value="average">Average</option>
@@ -96,7 +97,7 @@
             <!-- Comfort and Ambiance -->
             <div class="form-group">
                 <label for="comfort-ambiance">Comfort and Ambiance:</label>
-                <select id="comfort-ambiance" name="comfort_ambiance">
+                <select id="comfort-ambiance" name="comfort" required>
                     <option value="excellent">Excellent</option>
                     <option value="good">Good</option>
                     <option value="average">Average</option>
@@ -108,7 +109,7 @@
             <!-- Safety and Security -->
             <div class="form-group">
                 <label for="safety-security">Safety and Security:</label>
-                <select id="safety-security" name="safety_security">
+                <select id="safety-security" name="safety" required>
                     <option value="very_safe">Very Safe</option>
                     <option value="somewhat_safe">Somewhat Safe</option>
                     <option value="neutral">Neutral</option>
@@ -120,7 +121,7 @@
             
             <div class="form-group">
                 <label for="additional-comments">Additional Comments:</label>
-                <textarea id="additional-comments" name="additional_comments" rows="4"></textarea>
+                <textarea id="additional-comments" name="comment" rows="4" required></textarea>
             </div>
 
             <button type="submit">Submit Feedback</button>

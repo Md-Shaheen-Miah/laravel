@@ -5,6 +5,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\StaffController;
 
 
 /*
@@ -62,13 +64,7 @@ Route::get('/contact', function () {
 Route::get('/view-feedback', function () {
     return view('master-pages.view-feedback');
 });
-Route::get('/feedback', function () {
-    return view('master-pages.feedback');
-});
 
-Route::get('/book', function () {
-    return view('master-pages.book');
-});
 
 
 Route::get('/amenities', function () {
@@ -81,9 +77,6 @@ Route::get('/login', function () {
 
 
 
-Route::get('/booked', function () {
-    return view('admin-pages.booked');
-});
 
 
 
@@ -97,11 +90,17 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 
-Route::post('/store', [BookController::class, 'store'])->name('store');
-Route::get('/booked', [BookController::class, 'booked']);
+ 
+
+/*booking table*/
+Route::get('book',[BookController::class, 'book'])->name('book'); /* form viw route */
+Route::post('store',[BookController::class, 'store'])->name('store');  /*data insert  route*/
+Route::get('booked',[BookController::class, 'booked']); /* table viw route */
 Route::get('/bokedt/{book_id}', [BookController::class, 'update'])->name('bokedt');
-Route::put('editstore', [BookController::class, 'editstore'])->name('editstore');
-Route::delete('delete', [BookController::class, 'destroy'])->name('delete');
+Route::post('editstore',[BookController::class, 'editstore'])->name('editstore');
+Route::delete('delete',[BookController::class, 'destroy'])->name('delete');    
+/*booking table*/
 
-
-
+Route::get('staff',[StaffController::class, 'staff'])->name('staff'); /* form viw route */
+Route::post('store',[staffController::class, 'store'])->name('store');  /*data insert  route*/
+Route::get('viewstaff',[StaffController::class, 'viewstaff']); /* table viw route */

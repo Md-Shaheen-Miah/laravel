@@ -8,7 +8,7 @@
         <h1>Edit Booking</h1>
         <form action="{{ route('editstore') }}" method="POST">
             @csrf
-            @method('PUT')
+            
 
             <div class="form-group">
                 <label for="name">Name:</label>
