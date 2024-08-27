@@ -11,7 +11,7 @@ class UpdatebookRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class UpdatebookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' =>'required',
+            'email' =>'required',
+            'checkin' =>'required',
+            'checkout' =>'required',
+            'adult' =>'required',
+            'children' =>'required',
+            'room' =>'required', 
         ];
     }
 }

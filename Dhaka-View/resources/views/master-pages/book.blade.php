@@ -92,8 +92,8 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form  action="{{ route('store') }}" method="POST">
-                              @csrf
+                            <form  action="{{ route('story') }}" method="POST">
+                            @csrf
                             
                                 <div class="row g-3">
                                     <div class="col-md-6">

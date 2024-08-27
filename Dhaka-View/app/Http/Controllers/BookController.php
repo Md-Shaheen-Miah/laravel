@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\book;
 use Carbon\Carbon;
-
-use App\Http\Requests\StorebookRequest;
-use App\Http\Requests\UpdatebookRequest;
 use Illuminate\Http\Request;
+
+use App\Http\Requests\StorybookRequest;
+use App\Http\Requests\UpdatebookRequest;
+
 
 class BookController extends Controller
 {
@@ -31,13 +32,13 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorebookRequest $request) /* data insert */
+    public function story(StorybookRequest $request) /* data insert */
     {
        $book = new book;
        $book->name = $request->name;
        $book->email = $request->email;
        $book->checkin = Carbon::createFromFormat('m/d/Y h:i A', $request->checkin)->format('Y-m-d H:i:s');
-        $book->checkout = Carbon::createFromFormat('m/d/Y h:i A', $request->checkout)->format('Y-m-d H:i:s');
+       $book->checkout = Carbon::createFromFormat('m/d/Y h:i A', $request->checkout)->format('Y-m-d H:i:s');
        $book->adult = $request->adult;
        $book->children = $request->children;
        $book->room = $request->room;
@@ -56,9 +57,9 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function editstore(StorebookRequest $request)
+    public function editstore(StorybookRequest $request)
     { 
-        
+     
         $book = book::find($request->book_id);
         $book->name = $request->name;
         $book->email = $request->email;

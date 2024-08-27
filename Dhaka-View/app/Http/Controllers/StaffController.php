@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\staff;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorestaffRequest;
 use App\Http\Requests\UpdatestaffRequest;
 
@@ -68,8 +69,12 @@ class StaffController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(staff $staff)
+    public function delete(Request $request)
     {
-        //
+        
+        $staff = staff::find($request->staff_id);
+        
+        $staff->delete();
+        return Redirect('/viewstaff'); 
     }
 }

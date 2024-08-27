@@ -36,7 +36,13 @@
                     <td>{{$staff->salary}}</td>
                     <td>
                         <button>Edit</button>
-                        <button>Delete</button>
+                        
+                        <form class="update" action="{{route('delete')}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <input type="text" name="staff_id" id="" value="{{$staff->id}}" hidden>
+                            <BUtton>delete</BUtton>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
