@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreroomlistRequest extends FormRequest
+class UpdateroomRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,13 +22,7 @@ class StoreroomlistRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'room_number' =>'required',
-            'room_type' =>'required',
-            'bed_type' =>'required',
-            'price' =>'required',
-            'avaiability_status' =>'required',
-            'description' =>'required',
-           
+            //
         ];
     }
 }

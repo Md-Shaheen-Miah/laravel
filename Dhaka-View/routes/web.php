@@ -3,11 +3,12 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\RoomlistController;
+use App\Http\Controllers\FeedbackController;
+
 
 
 /*
@@ -110,5 +111,7 @@ route::post('/update/{staff_id}',[StaffController::class, 'updateData'])->name('
 Route::delete('delete',[StaffController::class, 'delete'])->name('delete');    
 
 
-Route::get('/roomform',[RoomlistController::class, 'list'])->name('roomform'); /* form viw route */
-Route::post('/mstore',[RoomlistController::class, 'addstore'])->name('mstore');  /*data insert  route*/
+
+Route::get('/roomform',[RoomController::class, 'roomstore'])->name('roomform'); /* form viw route */
+Route::post('/addroom',[RoomController::class, 'roomadd'])->name('addroom'); 
+
