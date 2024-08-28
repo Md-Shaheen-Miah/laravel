@@ -70,7 +70,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="tables/tables.html">
+                      <a href="{{url('/roomform') }}">
                         <span class="sub-item">Add New Room</span>
                       </a>
                     </li>

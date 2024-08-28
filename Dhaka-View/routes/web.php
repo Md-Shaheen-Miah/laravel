@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\RoomlistController;
 
 
 /*
@@ -107,3 +108,7 @@ Route::get('viewstaff',[StaffController::class, 'viewstaff']); /* table viw rout
 route::get('/edit/{staff_id}',[StaffController::class, 'editData'])->name('edit');
 route::post('/update/{staff_id}',[StaffController::class, 'updateData'])->name('update');
 Route::delete('delete',[StaffController::class, 'delete'])->name('delete');    
+
+
+Route::get('/roomform',[RoomlistController::class, 'list'])->name('roomform'); /* form viw route */
+Route::post('/mstore',[RoomlistController::class, 'addstore'])->name('mstore');  /*data insert  route*/
