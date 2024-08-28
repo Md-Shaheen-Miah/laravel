@@ -53,17 +53,28 @@ class StaffController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(staff $staff)
+    public function editData($staff_id)
     {
-        //
+        $staff = staff::findOrfail($staff_id);
+
+        return view('admin-pages.editstaff',['staff' =>$staff]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatestaffRequest $request, staff $staff)
+    public function updateData( $staff_id, StorestaffRequest $request)
     {
-        //
+        $staff = staff::findOrfail($staff_id);
+       
+        $staff->name = $request->name;
+        $staff->email = $request->email;
+        $staff->position = $request->position;
+        $staff->department = $request->department;
+        $staff->salary = $request->salary;
+         $staff->save();
+        return Redirect('/viewstaff');
+    
     }
 
     /**

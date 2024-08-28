@@ -35,7 +35,7 @@
                     <td>{{$staff->department}}</td>
                     <td>{{$staff->salary}}</td>
                     <td>
-                        <button>Edit</button>
+                      <a href="{{route('edit',$staff->id)}}"><button>edit</button></a>
                         
                         <form class="update" action="{{route('delete')}}" method="POST">
                             @method('DELETE')

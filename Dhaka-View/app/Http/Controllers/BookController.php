@@ -34,15 +34,7 @@ class BookController extends Controller
      */
     public function story(StorybookRequest $request) /* data insert */
     {
-       $book = new book;
-       $book->name = $request->name;
-       $book->email = $request->email;
-       $book->checkin = Carbon::createFromFormat('m/d/Y h:i A', $request->checkin)->format('Y-m-d H:i:s');
-       $book->checkout = Carbon::createFromFormat('m/d/Y h:i A', $request->checkout)->format('Y-m-d H:i:s');
-       $book->adult = $request->adult;
-       $book->children = $request->children;
-       $book->room = $request->room;
-       $book->save();
+      
         return Redirect('/home');
     }
 
