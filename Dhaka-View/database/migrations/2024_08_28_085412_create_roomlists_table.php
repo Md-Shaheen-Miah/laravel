@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('roomlists', function (Blueprint $table) {
             $table->id();
-            $table->string('room_number', 10);
-            $table->string('room_type', 50);
-            $table->string('bed_type', 50)->nullable();
-            $table->decimal('price', 10, 2);
-            $table->boolean('availability_status')->default(true);
-            $table->text('description')->nullable();
-            $table->timestamps();  // This will automatically create 'created_at' and 'updated_at' columns
+            $table->string('room_number');
+            $table->string('room_type');
+            $table->string('bed_type');
+            $table->string('price');
+            $table->string('availability_status');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
