@@ -1,5 +1,5 @@
 /* General form styles */
-.container {
+.containerhok {
     
     margin: 0 auto;
     width: 100%;
@@ -9,10 +9,13 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.head {
     text-align: center;
     margin-bottom: 20px;
-    color: #573131;
+    color: #e80b0b;
+}
+h4{
+    text-align: center;
 }
 
 form {

@@ -1,6 +1,6 @@
 @extends('admin')
 @section('content')
-
+<link rel="stylesheet" href="admin-css/vroom.css">
 <div class="container">
     <h1>Room List</h1>
     <table class="room-list">
@@ -28,11 +28,16 @@
                 <td>{{$room->six}}</td>
                 <td>
                     <!-- Route link with correct syntax -->
-                    <a href="{{ route('editroom', $room->id) }}"><button>Edit</button></a>
-                    <button>Delete</button>
+                    <a href="{{route('editroom',$room->id)}}"><button>Edit</button></a>
+                    <form action="{{ route('remove', $room->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">delete</button>
+                    </form>
+
                 </td>
             </tr>
-        @endforeach
+            @endforeach
         </tbody>
     </table>
 </div>

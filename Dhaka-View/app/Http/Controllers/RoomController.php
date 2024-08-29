@@ -12,11 +12,11 @@ class RoomController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function adData()
+    public function adData($room_id)
 
     {
-      
-        return view('admin-pages.editroom');
+        $room = room::findOrfail($room_id);
+       return view('admin-pages.editroom',['room' =>$room]);
     }
 
     /**
@@ -49,8 +49,10 @@ class RoomController extends Controller
     public function showroom()
    
     {
+        $rooms = room::all();
+        return view('admin-pages.vroom',compact('rooms'));
        
-        return view('admin-pages.vroom');
+       
     }
 
     /**
@@ -64,16 +66,28 @@ class RoomController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateroomRequest $request, room $room)
+    public function upData( $room_id, StoreroomRequest $request)
     {
-        //
+        $room = room::findOrfail( $room_id);
+       
+        $room->one = $request->one;
+        $room->two = $request->two;
+        $room->three = $request->three;
+        $room->four = $request->four;
+        $room->five = $request->five;
+        $room->six = $request->six;
+         $room->save();
+        return Redirect('/vroom');
+    
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(room $room)
+    public function deleteroom( $room_id)
     {
-        //
+        $room = room::findOrfail( $room_id);
+        $room->delete();
+        return Redirect('/vroom');
     }
 }
