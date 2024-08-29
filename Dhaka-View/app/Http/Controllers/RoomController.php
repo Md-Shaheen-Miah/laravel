@@ -12,9 +12,11 @@ class RoomController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function adData()
+
     {
-        //
+      
+        return view('admin-pages.editroom');
     }
 
     /**
@@ -38,14 +40,17 @@ class RoomController extends Controller
         $room->five = $request->five;
         $room->six = $request->six;
         $room->save();
+        return Redirect('/vroom');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(room $room)
+    public function showroom()
+   
     {
-        //
+       
+        return view('admin-pages.vroom');
     }
 
     /**

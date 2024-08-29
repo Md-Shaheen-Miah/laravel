@@ -61,6 +61,7 @@
                 <option >Available</option>
                 <option >Dirty</option>
                 <option>Occupied</option>
+                <option>Booked</option>
             </select>
         </div>
 

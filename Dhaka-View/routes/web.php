@@ -113,5 +113,8 @@ Route::delete('delete',[StaffController::class, 'delete'])->name('delete');
 
 
 Route::get('/roomform',[RoomController::class, 'roomstore'])->name('roomform'); /* form viw route */
-Route::post('/addroom',[RoomController::class, 'roomadd'])->name('addroom'); 
+Route::post('/addroom',[RoomController::class, 'roomadd'])->name('addroom');
+Route::get('/vroom',[RoomController::class, 'showroom']); 
+Route::get('/editroom',[RoomController::class, 'adData'])->name('editroom');
+
 

@@ -65,7 +65,7 @@
                 <div class="collapse" id="tables">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="tables/tables.html">
+                      <a href="{{url('/vroom') }}">
                         <span class="sub-item">Room List</span>
                       </a>
                     </li>
