@@ -123,6 +123,8 @@ Route::delete('/remove/{room_id}',[RoomController::class, 'deleteroom'])->name('
 
 Route::get('/adduser',[AdminController::class, 'adduser'])->name('adduser'); /* form viw route */
 Route::post('/addadmin',[AdminController::class, 'addadmin'])->name('addadmin');
+Route::get('/user',[AdminController::class, 'vuser']);
+Route::get('/edituser',[AdminController::class, 'useredit'])->name('edituser');
 
 
 

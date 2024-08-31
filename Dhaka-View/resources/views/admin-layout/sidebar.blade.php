@@ -197,7 +197,7 @@
         <li class="menu-item has-dropdown">
             <a href="#" class="menu-link">User Management</a>
             <ul class="dropdown-menu">
-                <li><a href="#">User List</a></li>
+                <li><a href="{{ url('/user') }}">User List</a></li>
                 <li><a href="{{ url('/adduser') }}">Add New User</a></li>
                 
             </ul>

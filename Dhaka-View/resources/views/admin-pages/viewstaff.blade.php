@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Staff Information</h1>
+        <h1>Staff Information</h1> 
         <table class="staff-table">
             <thead>
                 <tr>

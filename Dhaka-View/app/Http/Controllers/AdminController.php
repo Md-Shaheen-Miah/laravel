@@ -29,17 +29,18 @@ class AdminController extends Controller
         $admin->five = $request->five;
         $admin->save();
 
-        return "store data";
+        return Redirect('admin-pages.user');
     }
 
-    public function show(admin $admin)
+    public function vuser() /* user table for view */
     {
-        //
+        $admins = admin::all();
+        return view('admin-pages.user',compact('admins'));
     }
 
-    public function edit(admin $admin)
+    public function useredit()  /*edituser form view */
     {
-        //
+      return view('admin-pages.edituser');
     }
 
     public function update(UpdateadminRequest $request, admin $admin)
