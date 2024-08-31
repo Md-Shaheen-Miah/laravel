@@ -1,5 +1,7 @@
 @extends('admin')
 @section('content')
+
+
 <link rel="stylesheet" href="admin-css/booked.css">
 <section>
   

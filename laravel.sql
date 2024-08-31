@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2024 at 02:45 PM
+-- Generation Time: Aug 31, 2024 at 07:41 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `one` varchar(255) NOT NULL,
+  `two` varchar(255) NOT NULL,
+  `three` varchar(255) NOT NULL,
+  `four` varchar(255) NOT NULL,
+  `five` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `one`, `two`, `three`, `four`, `five`, `created_at`, `updated_at`) VALUES
+(1, 'Shaheen', 'shaheen@gmail.com', '123', 'Manager', 'ok', '2024-08-30 23:41:05', '2024-08-30 23:41:05');
 
 -- --------------------------------------------------------
 
@@ -132,13 +156,15 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(13, '0001_01_01_000000_create_users_table', 1),
-(14, '0001_01_01_000001_create_cache_table', 1),
-(15, '0001_01_01_000002_create_jobs_table', 1),
-(16, '2024_08_26_102318_create_books_table', 1),
-(17, '2024_08_26_135017_create_staff_table', 1),
-(18, '2024_08_28_085412_create_roomlists_table', 1),
-(19, '2024_08_28_164811_create_rooms_table', 2);
+(9, '2024_08_24_175638_create_books_table', 1),
+(10, '2024_08_26_085836_create_feedbacks_table', 1),
+(13, '0001_01_01_000000_create_users_table', 2),
+(14, '0001_01_01_000001_create_cache_table', 2),
+(15, '0001_01_01_000002_create_jobs_table', 2),
+(16, '2024_08_26_102318_create_books_table', 2),
+(17, '2024_08_26_135017_create_staff_table', 2),
+(19, '2024_08_28_164811_create_rooms_table', 3),
+(20, '2024_08_31_032113_create_admins_table', 4);
 
 -- --------------------------------------------------------
 
@@ -175,8 +201,9 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `one`, `two`, `three`, `four`, `five`, `six`, `created_at`, `updated_at`) VALUES
-(4, 240, 'Executive Room', 'Double Bed', 200.00, 'Occupied', 'sea view room', '2024-08-29 03:18:36', '2024-08-29 06:03:08'),
-(7, 120, 'Presidential Suite', 'Twin Bed', 300.00, 'Available', 'ok', '2024-08-29 06:43:47', '2024-08-29 06:44:05');
+(8, 320, 'Presidential Suite', 'Twin Bed', 300.00, 'Available', 'room', '2024-08-28 22:41:02', '2024-08-28 22:41:02'),
+(9, 320, 'Presidential Suite', 'Twin Bed', 300.00, 'Available', 'yes', '2024-08-28 22:44:33', '2024-08-28 22:44:33'),
+(11, 110, 'King Room', 'Twin Bed', 100.00, 'Available', 'yes', '2024-08-30 13:10:04', '2024-08-30 13:11:07');
 
 -- --------------------------------------------------------
 
@@ -198,7 +225,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('163YbkmIgMINRXVyfxBxSINvJhdy5xlkadlhiubE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTGxVWUJPUVNSaXRVNU9meERlbTJRVlZuejJqRFBMaERZQmtyN2FPTCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC92cm9vbSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1724935445);
+('T8GDbkD81zeOYjCEPVdn6htvCpUsdLJ5JsvvCr4n', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMmRTTU92b3A3eERWWlVsV1dJQTRYMW1GR2xwYXNHUTBxQW5lZVR1bSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC92aWV3c3RhZmYiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1725045226),
+('VV4adwImVhKpigpuTBuqgTwFKhBkUjGu3O5kOLyO', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRDZlZjFjNW9nM3M2ZUdOYjZpbm9YdU03YXROWnVoNzVJSTNxWm85TyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZGR1c2VyIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1725082865);
 
 -- --------------------------------------------------------
 
@@ -222,8 +250,7 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`id`, `name`, `email`, `position`, `department`, `salary`, `created_at`, `updated_at`) VALUES
-(1, 'md. Shaheen miah', 'mdshaheen60101@gmail.com', 'service', 'food', 12000.00, '2024-08-28 07:09:41', '2024-08-28 07:09:41'),
-(2, 'md. Tuhin', 'mdtuhin@gmail.com', 'clener', 'hk', 11000.00, '2024-08-29 03:19:18', '2024-08-29 03:19:18');
+(2, 'sahin Afridi', 'm@gmail.com', 'office', 'management', 12000.00, '2024-08-27 12:36:44', '2024-08-27 22:50:11');
 
 -- --------------------------------------------------------
 
@@ -243,8 +270,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Test User', 'test@example.com', '2024-08-27 11:48:45', '$2y$12$GOFuQXO0TXisn7F4qpCLSOPEHR91Hmt7hb0N..ofOKaHBvD2Arscm', 'Ek8F8KqBzn', '2024-08-27 11:48:46', '2024-08-27 11:48:46');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `admins_two_unique` (`two`);
 
 --
 -- Indexes for table `books`
@@ -329,6 +370,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
@@ -350,25 +397,25 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

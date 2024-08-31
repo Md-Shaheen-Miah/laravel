@@ -5,6 +5,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\FeedbackController;
@@ -118,6 +119,10 @@ Route::get('/vroom',[RoomController::class, 'showroom']);
 Route::get('/editroom/{room_id}',[RoomController::class, 'adData'])->name('editroom');
 Route::post('/uproom/{room_id}',[RoomController::class, 'upData'])->name('uproom');
 Route::delete('/remove/{room_id}',[RoomController::class, 'deleteroom'])->name('remove');
+
+
+Route::get('/adduser',[AdminController::class, 'adduser'])->name('adduser'); /* form viw route */
+Route::post('/addadmin',[AdminController::class, 'addadmin'])->name('addadmin');
 
 
 
