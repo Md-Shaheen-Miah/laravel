@@ -36,7 +36,11 @@
                     <td>{{$admin->five}}</td>
                     <td>
                       <a href="{{ route('edituser') }}"><button>edit</button></a>
-                      <a href="#"><button>delete</button></a>
+                      <form action="{{ route('destroy', $admin->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">delete</button>
+                    </form>
                        
                     </td>
                 </tr>

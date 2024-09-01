@@ -125,6 +125,7 @@ Route::get('/adduser',[AdminController::class, 'adduser'])->name('adduser'); /* 
 Route::post('/addadmin',[AdminController::class, 'addadmin'])->name('addadmin');
 Route::get('/user',[AdminController::class, 'vuser']);
 Route::get('/edituser',[AdminController::class, 'useredit'])->name('edituser');
+Route::delete('/destroy/{admin_id}',[AdminController::class, 'deleteuser'])->name('destroy');
 
 
 

@@ -29,7 +29,7 @@ class AdminController extends Controller
         $admin->five = $request->five;
         $admin->save();
 
-        return Redirect('admin-pages.user');
+        return Redirect('/user');
     }
 
     public function vuser() /* user table for view */
@@ -48,8 +48,10 @@ class AdminController extends Controller
         //
     }
 
-    public function destroy(admin $admin)
+    public function deleteuser( $admin_id)
     {
-        //
+        $admin = admin::findOrfail( $admin_id);
+        $admin->delete();
+        return Redirect('/user');
     }
 }
