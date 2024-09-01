@@ -42,12 +42,11 @@
 
           <a href="{{route('bokedt',$book->id)}}">   <button>edit</button></a>
          
-          <form class="update" action="{{route('delete')}}" method="POST">
-              @method('DELETE')
-              @csrf
-            <input type="text" name="book_id" id="" value="{{$book->id}}" hidden>
-            <BUtton>delete</BUtton>
-          </form>
+          <form action="{{ route('delete', $book->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">delete</button>
+                    </form>
           </td>
         </tr>
         @endforeach
