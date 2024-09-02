@@ -96,12 +96,9 @@ Route::post('/login', [LoginController::class, 'login']);
  
 
 /*booking table*/
-Route::get('book',[BookController::class, 'book'])->name('book'); /* form viw route */
-Route::post('/story',[BookController::class, 'story'])->name('story');  /*data insert  route*/
-Route::get('booked',[BookController::class, 'booked']); /* table viw route */
-Route::get('/bokedt/{book_id}', [BookController::class, 'update'])->name('bokedt');
-Route::put('editstore',[BookController::class, 'editstore'])->name('editstore');
-Route::delete('delete',[BookController::class, 'destroy'])->name('delete');    
+Route::get('/book',[BookController::class, 'booking'])->name('book');
+Route::post('/booked',[BookController::class, 'booked'])->name('booked');
+   
 /*booking table*/
 
 Route::get('staff',[StaffController::class, 'staff'])->name('staff'); /* form viw route */

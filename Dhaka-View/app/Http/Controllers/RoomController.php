@@ -76,7 +76,7 @@ class RoomController extends Controller
         $room->four = $request->four;
         $room->five = $request->five;
         $room->six = $request->six;
-         $room->save();
+        $room->save();
         return Redirect('/vroom');
     
     }
