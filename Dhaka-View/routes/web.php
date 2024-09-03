@@ -98,6 +98,10 @@ Route::post('/login', [LoginController::class, 'login']);
 /*booking table*/
 Route::get('/book',[BookController::class, 'booking'])->name('book');
 Route::post('/booked',[BookController::class, 'booked'])->name('booked');
+Route::get('/booked',[BookController::class, 'showtable']);
+Route::get('/bokedt/{book_id}',[BookController::class, 'editbooked'])->name('bokedt');
+Route::post('/aditbook/{book_id}', [BookController::class, 'ediet'])->name('aditbook');
+
    
 /*booking table*/
 

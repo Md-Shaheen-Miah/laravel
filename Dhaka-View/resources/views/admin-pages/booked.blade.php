@@ -27,27 +27,29 @@
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-    
+    @foreach ($books as $book)
         <tr>
           
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-		      <td></td>
-		      <td></td>
-		      <td></td>
+          <td>{{$book->id}}</td>
+          <td>{{$book->name}}</td>
+          <td>{{$book->email}}</td>
+          <td>{{$book->checkin}}</td>
+          <td>{{$book->checkout}}</td>
+		      <td>{{$book->adult}}</td>
+		      <td>{{$book->children}}</td>
+		      <td>{{$book->room}}</td>
 		      <td>
 
-          <a href="#">   <button>edit</button></a>
+          
+          <a href="{{ route('bokedt', $book->id) }}">Edit</a>
          
-          <form action="#" method="POST">
+          <form action="#" method="#">
                       
                         <button type="submit">delete</button>
                     </form>
           </td>
         </tr>
+        @endforeach
        
 		  </tbody>
     </table>
