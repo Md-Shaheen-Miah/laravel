@@ -117,7 +117,7 @@
                 <div class="collapse" id="charts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="charts/charts.html">
+                      <a href="{{ url('/invoice') }}">
                         <span class="sub-item">Invoices</span>
                       </a>
                     </li>

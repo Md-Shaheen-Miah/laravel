@@ -43,10 +43,12 @@
           
           <a href="{{ route('bokedt', $book->id) }}">Edit</a>
          
-          <form action="#" method="#">
-                      
+          <form action="{{ route('destoy', $book->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
                         <button type="submit">delete</button>
                     </form>
+          
           </td>
         </tr>
         @endforeach

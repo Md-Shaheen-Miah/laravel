@@ -61,6 +61,13 @@ class BookController extends Controller
         $book->save();
     
         // Redirect to the booked list page
+        return redirect('/booked');
+    }
+
+    public function deleting( $book_id)
+    {
+        $book = book::findOrfail( $book_id);
+        $book->delete();
         return Redirect('/booked');
     }
 }

@@ -77,6 +77,9 @@ Route::get('/login', function () {
     return view('Auth.login');
 });
 
+Route::get('/invoice', function () {
+    return view('admin-pages.invoice');
+});
 
 
 
@@ -101,6 +104,8 @@ Route::post('/booked',[BookController::class, 'booked'])->name('booked');
 Route::get('/booked',[BookController::class, 'showtable']);
 Route::get('/bokedt/{book_id}',[BookController::class, 'editbooked'])->name('bokedt');
 Route::post('/aditbook/{book_id}', [BookController::class, 'ediet'])->name('aditbook');
+Route::delete('/destoy/{book_id}',[BookController::class, 'deleting'])->name('destoy');
+
 
    
 /*booking table*/
